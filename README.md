@@ -1,7 +1,7 @@
 # VR_Pupper_Control
-Code Package to remotely control the Stanford Pupper with Virtual Reality
+Code Package to remotely control the Stanford Pupper with Virtual Reality.
 
-To stream the camera feed to the viewmaster via the Pi's local IP Address, run rpi_camera_streaming.py which is based on what http://picamera.readthedocs.io/en/latest/recipes2.html#web-streaming did for surveilance. 
+To stream the camera feed to the View-Master via the Raspberry Pi's local IP Address, run rpi_camera_streaming.py which is based on what http://picamera.readthedocs.io/en/latest/recipes2.html#web-streaming did for surveillance. Follow this link format: http:{your_pi's_ip_address}:8000.
 
 Once the VRduino is connected to the Pupper's Raspberry Pi and the robot has performed its default boot up, run karel-pupper-api/StanfordQuadroped/programs/imu_data.py to sync head movement on the View-Master to the Pupper. We use the Karel Pupper API to abstract some control functionality of the robot - take a look over here: https://github.com/stanfordroboticsclub/karel-pupper-api.
 

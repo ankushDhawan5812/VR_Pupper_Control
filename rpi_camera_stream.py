@@ -1,4 +1,4 @@
-# Web streaming example
+# Web streaming for rendering VR image from the pupper's pi camera
 # Source code from the official PiCamera package
 # http://picamera.readthedocs.io/en/latest/recipes2.html#web-streaming
 
@@ -10,22 +10,16 @@ from threading import Condition
 from http import server
 
 
-'''
 
-PAGE="""\
-<html>
-<head>
-<title>Raspberry Pi - Surveillance Camera</title>
-</head>
-<body>
-<center><h1>Raspberry Pi - Surveillance Camera</h1></center>
-<center><img src="stream.mjpg" width="640" height="480"></center>
-</body>
-</html>
 """
+Page is setup to stream two camera feeds, one for each eye in the viewmaster
 
-'''
+After running this file, make sure that the viewmaster is connected to a computer that is on the same network as the pi (Stanford network probably won't work because it has a strogn firewall, so use a personal router or hotspot). 
 
+After ensuring this, run ifconfig on the pi (sudo ifconfig if you're in desktop mode) to get the IP Address (it's next to inet under wlan0 in the output of ifconfig). 
+
+You can then get the stream on the viewmaster by pulling up http://<PI IP ADDRESS HERE>:8000
+"""
 
 PAGE="""\
 <html>

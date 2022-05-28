@@ -1,0 +1,53 @@
+from time import sleep
+import time
+import sys, os
+sys.path.append(os.path.abspath(os.path.join('..')))
+import karelPupper
+import numpy as np
+
+def main():
+    myPup = karelPupper.Pupper()
+    myPup.wakeup()
+    sleep(1)
+    print("started")
+    myPup.slowStand()
+    sleep(2)
+    """
+    myPup.nap()
+    print("napping")
+    sleep(2)
+    myPup.rest()
+    print("resting")
+    myPup.turnI(3/2, 0.4)
+    print("first turn I")
+    myPup.turn_for_time(2, 0.4)
+    print("first turn for time")
+    
+    st = time.time()
+    start = myPup.getImu()
+    print("took", time.time() - st)
+    while myPup.getImu() > start - 3/2:
+        print(myPup.getImu())
+        sleep(0.1)
+    print("done")
+    sleep(3)
+
+    myPup.turnI(-np.pi / 2, 1.2)
+    print("turn has fully executed")
+    myPup.forward_for_time(5, 0.3)
+
+    myPup.wakeup()
+    sleep(2)
+    myPup.turn(3/4, 0.12)
+    sleep(2)
+    myPup.turn(-3/4, 0.12)
+    sleep(1)
+    
+    sleep(3)
+    myPup.move_until_blocked(0.4)
+    myPup.turn_for_time(3, 0.2, karelPupper.BehaviorState.TROT)
+    myPup.forward_for_time(3, 0.2, karelPupper.BehaviorState.WALK)
+    sleep(2)
+    myPup.nap()
+    """
+main()
